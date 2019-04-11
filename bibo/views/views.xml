@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   
+
+         <template id="contactus_forms" name="Contact Form" inherit_id="website.contactus" customize_show="True">
+            <xpath expr="//label[@for='description']" position="before">
+                        
+                        <div class="form-group row form-field col-lg-12">
+                            <label class="col-lg-3 col-md-4 col-form-label" for="piezas">Numero de Piezas</label>
+                            <div class="col-lg-7 col-md-8">
+                                <input class="form-control o_website_form_input" name="piezas" t-att-value="request.params.get('piezas', '')" />
+                            </div>
+                        </div>
+
+                        <div class="form-group row form-field col-lg-12">
+                           <label class="col-lg-3 col-md-4 col-form-label">¿Cliente/provedor?</label>
+                           <div class="col-lg-7 col-md-8">
+                              <select name="type_cliente" class="col-lg-7">
+                                <option value="Proveedor">Proveedor</option>
+                                <option value="Cliente Final">Cliente Final</option>
+                             </select>
+                           </div>
+                        </div>  
+
+                          <div class="form-group row form-field col-lg-12">
+                            <label class="col-lg-3 col-md-4 col-form-label">Estado</label>
+                            <div class="col-lg-7 col-md-8">
+                               <select name="estado">
+                                <option value="1"></option> 
+                                <option value="2">Aguascalientes</option>
+                                <option value="3">Baja California</option>
+                                <option value="4">Baja California Sur</option>
+                                <option value="5">Campeche</option>
+                                <option value="6">Chiapas</option>
+                                <option value="7">Chihuahua</option>
+                                <option value="8">Coahuila de Zaragoza</option>
+                                <option value="9">Colima</option>
+                                <option value="10">Ciudad de México</option>
+                                <option value="11">Durango</option>
+                                <option value="11">Guanajuato</option>
+                                <option value="12">Guerrero</option>
+                                <option value="13">Hidalgo</option>
+                                <option value="14">Jalisco</option>
+                                <option value="15">Michoacán de Ocampo</option>
+                                <option value="16">Morelos</option>
+                                <option value="17">México</option>
+                                <option value="18">Nayarit</option>
+                                <option value="19">Nuevo León</option>
+                                <option value="20">Oaxaca</option>
+                                <option value="21">Puebla</option>
+                                <option value="22">Querétaro</option>
+                                <option value="23">Quintana Roo</option>
+                                <option value="24">San Luis Potosí</option>
+                                <option value="25">Sinaloa</option>
+                                <option value="26">Sonora</option>
+                                <option value="27">Tabasco</option>
+                                <option value="28">Tamaulipas</option>
+                                <option value="29">Tlaxcala</option>
+                                <option value="30">Veracruz de Ignacio de la Llave</option>
+                                <option value="31">Yucatán</option>
+                                <option value="32">Zacatecas</option>
+                              </select>
+                            </div>
+                        </div>          
+            </xpath>
+        </template>
+
+        <record id="piezas_bibo_campo" model="ir.ui.view">
+            <field name="name">piezas.ibo.campo</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_tree_view_leads"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='contact_name']" position="after">
+                    <field name="piezas"/>
+                </xpath> 
+            </field>
+        </record>
+
+        <record id="piezas_bibo_campo_oportunity" model="ir.ui.view">
+            <field name="name">piezas.bibo.campo.oportunity</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_leads"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/group/group[2]/field[@name='mobile']" position="after">
+                    <field name="piezas"/>
+                </xpath> 
+            </field>
+        </record>
+</odoo>

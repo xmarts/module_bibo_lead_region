@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+     <!--       <record model='ir.ui.view' id="xmarts">
+        <field name="name">xmarts</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_form_view_leads" />
+        <field name="arch" type="xml">
+           <xpath expr="//field[@name='team_id']" position="replace"> 
+            <field name="team_id"/>
+            
+            </xpath> 
+           
+      
+      
+        </field>
+      </record> -->
+    </data>
+
+</odoo>
