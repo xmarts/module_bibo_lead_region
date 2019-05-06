@@ -22,7 +22,7 @@ class lead_ini(models.Model):
 			res = super(lead_ini, self).create(values)
 			if res['type_cliente'] == 'Proveedor':
 				if res['piezas'] >= 200:
-					if res['estado'] == 3 or res['estado'] == 4 or res['estado'] == 25 or res['estado'] == 26 or res['estado'] == 7 or res['estado'] == 8 or res['estado'] == 11 or res['estado'] == 28:
+					if res['estado'] == 3 or res['estado'] == 4 or res['estado'] == 26 or res['estado'] == 27 or res['estado'] == 7 or res['estado'] == 8 or res['estado'] == 11 or res['estado'] == 29:
 						res['contact_name']
 						res['description']
 						res['email_from']
@@ -40,7 +40,7 @@ class lead_ini(models.Model):
 							res['user_id'] = r2.id
 							res['team_id'] = r2.sale_team_id
 							return res
-					elif res['estado'] == 2 or res['estado'] == 11 or res['estado'] == 22 or res['estado'] == 24 or res['estado'] == 32 or res['estado'] == 9 or res['estado'] == 14 or res['estado'] == 15  or res['estado'] == 18 or res['estado'] == 21 or res['estado'] == 12:
+					elif res['estado'] == 2 or res['estado'] == 12 or res['estado'] == 23 or res['estado'] == 25 or res['estado'] == 33 or res['estado'] == 15 or res['estado'] == 9 or res['estado'] == 19  or res['estado'] == 16 or res['estado'] == 13 or res['estado'] == 22:
 						res['contact_name']
 						res['description']
 						res['email_from']
@@ -59,9 +59,25 @@ class lead_ini(models.Model):
 							res['user_id'] = r2.id
 							res['team_id'] = r2.sale_team_id
 							return res
+					elif res['estado'] != 3 or res['estado'] != 4 or res['estado'] != 26 or res['estado'] != 27 or res['estado'] != 7 or res['estado'] != 8 or res['estado'] != 11 or res['estado'] != 29 or res['estado'] != 2 or res['estado'] != 12 or res['estado'] != 23 or res['estado'] != 25 or res['estado'] != 33 or res['estado'] != 15 or res['estado'] != 9 or res['estado'] != 19  or res['estado'] != 16 or res['estado'] != 13 or res['estado'] != 22:
+						res['contact_name']
+						res['description']
+						res['email_from']
+						res['name']
+						res['partner_name']
+						res['phone']
+						res['team_id']
+						res['user_id']
+						res['piezas']
+						res['estado']
+						res['type_cliente']
+						res['function']
+						res['user_id'] = ''
+						res['team_id'] = ''
+						return res
 				else:
 					if res['piezas']>=1 and res['piezas']<=199:
-						if res['estado'] == 3 or res['estado'] == 4 or res['estado'] ==25 or res['estado'] == 26:
+						if res['estado'] == 3 or res['estado'] == 4 or res['estado'] ==26 or res['estado'] == 27:
 							res['contact_name']
 							res['description']
 							res['email_from']
@@ -80,7 +96,7 @@ class lead_ini(models.Model):
 								res['user_id'] = r2.id
 								res['team_id'] = r2.sale_team_id
 								return res
-						elif res['estado'] == 7 or res['estado'] == 8 or res['estado'] == 11 or res['estado'] == 28 or res['estado'] == 9 or res['estado'] == 18:
+						elif res['estado'] == 7 or res['estado'] == 8 or res['estado'] == 29 or res['estado'] == 11 or res['estado'] == 9 or res['estado'] == 19:
 							res['contact_name']
 							res['description']
 							res['email_from']
@@ -99,7 +115,7 @@ class lead_ini(models.Model):
 								res['user_id'] = r2.id
 								res['team_id'] = r2.sale_team_id
 								return res
-						elif res['estado'] == 2 or res['estado'] == 11 or res['estado'] == 22 or res['estado'] == 24 or res['estado'] == 32:
+						elif res['estado'] == 2 or res['estado'] == 12 or res['estado'] == 23 or res['estado'] == 25 or res['estado'] == 33:
 							res['contact_name']
 							res['description']
 							res['email_from']
@@ -118,7 +134,7 @@ class lead_ini(models.Model):
 								res['user_id'] = r2.id
 								res['team_id'] = r2.sale_team_id
 								return res
-						elif res['estado'] == 14 or res['estado'] == 15:
+						elif res['estado'] == 15 or res['estado'] == 16:
 							res['contact_name']
 							res['description']
 							res['email_from']
@@ -137,7 +153,7 @@ class lead_ini(models.Model):
 								res['user_id'] = r2.id
 								res['team_id'] = r2.sale_team_id
 								return res
-						elif res['estado'] == 10 or res['estado'] == 17 or res['estado'] == 13 or res['estado'] == 16 or res['estado'] == 29:
+						elif res['estado'] == 10 or res['estado'] == 18 or res['estado'] == 14 or res['estado'] == 17 or res['estado'] == 30:
 							res['contact_name']
 							res['description']
 							res['email_from']
@@ -156,7 +172,7 @@ class lead_ini(models.Model):
 								res['user_id'] = r2.id
 								res['team_id'] = r2.sale_team_id
 								return res
-						elif res['estado'] == 31 or res['estado'] == 5 or res['estado'] == 23 or res['estado'] == 6 or res['estado'] == 20 or res['estado'] == 30 or res['estado'] == 27 or res['estado'] == 21 or res['estado'] == 12: 
+						elif res['estado'] == 32 or res['estado'] == 5 or res['estado'] == 24 or res['estado'] == 6 or res['estado'] == 21 or res['estado'] == 31 or res['estado'] == 28 or res['estado'] == 22 or res['estado'] == 13: 
 							res['contact_name']
 							res['description']
 							res['email_from']
@@ -175,6 +191,22 @@ class lead_ini(models.Model):
 								res['user_id'] = r2.id
 								res['team_id'] = r2.sale_team_id
 								return res
+						elif res['estado'] != 3 or res['estado'] != 4 or res['estado'] !=26 or res['estado'] != 27 or res['estado'] != 7 or res['estado'] != 8 or res['estado'] != 29 or res['estado'] != 11 or res['estado'] != 9 or res['estado'] != 19 or res['estado'] != 2 or res['estado'] != 12 or res['estado'] != 23 or res['estado'] != 25 or res['estado'] != 33 or  res['estado'] != 15 or res['estado'] != 16 or res['estado'] != 10 or res['estado'] != 18 or res['estado'] != 14 or res['estado'] != 17 or res['estado'] != 30 or res['estado'] != 32 or res['estado'] != 5 or res['estado'] != 24 or res['estado'] != 6 or res['estado'] != 21 or res['estado'] != 31 or res['estado'] != 28 or res['estado'] != 22 or res['estado'] != 13:
+							res['contact_name']
+							res['description']
+							res['email_from']
+							res['name']
+							res['partner_name']
+							res['phone']
+							res['team_id']
+							res['user_id']
+							res['piezas']
+							res['estado']
+							res['type_cliente']
+							res['function']
+							res['user_id'] = ''
+							res['team_id'] = ''
+							return res
 			else:
 				if res['piezas'] >= 1 and res['piezas'] <= 500:
 					res['contact_name']

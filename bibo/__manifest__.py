@@ -7,7 +7,7 @@
         subtitle on modules listing or apps.openerp.com""",
 
     'description': """
-        Long description of module's purpose
+        Modulo que asigna la distribucion de los lead por region y estados.
     """,
 
     'author': "My Company",
